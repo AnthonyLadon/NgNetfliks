@@ -1,7 +1,9 @@
 .slider {
+  position: relative;
+  height: 35rem;
   .slide {
-    position: relative;
     width: 100%;
+    position: absolute;
     &-bg {
       position: relative;
       height: 35rem;
@@ -51,6 +53,7 @@
       }
       .description {
         font-size: 1.2rem;
+        width: 75%;
       }
     }
   }
