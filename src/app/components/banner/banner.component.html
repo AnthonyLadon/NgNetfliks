@@ -1,5 +1,8 @@
-<div class="banner" *ngIf="upcomingMovies$ | async as upcomingMovies">
-  <div class="shows" *ngFor="let movie of upcomingMovies.results">
-    <app-show-item [showItem]="movie"></app-show-item>
+<div class="banner">
+  <h1>{{ title }}</h1>
+  <div class="banner-container" *ngIf="shows">
+    <div class="shows" *ngFor="let show of shows">
+      <app-show-item [showItem]="show"></app-show-item>
+    </div>
   </div>
 </div>
