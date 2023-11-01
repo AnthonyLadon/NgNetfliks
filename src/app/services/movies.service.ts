@@ -16,4 +16,10 @@ export class MoviesService {
       `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`
     );
   }
+
+  getUpcomingMovies() {
+    return this.http.get<MovieDataTypeObject>(
+      `${this.apiUrl}/movie/upcoming?api_key=${this.apiKey}`
+    );
+  }
 }

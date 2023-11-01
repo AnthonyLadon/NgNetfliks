@@ -1,0 +1,5 @@
+<div class="banner" *ngIf="upcomingMovies$ | async as upcomingMovies">
+  <div class="shows" *ngFor="let movie of upcomingMovies.results">
+    <app-show-item [showItem]="movie"></app-show-item>
+  </div>
+</div>

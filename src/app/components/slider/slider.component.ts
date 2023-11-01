@@ -7,7 +7,7 @@ import {
 } from "@angular/animations";
 import { MoviesService } from "./../../services/movies.service";
 import { Component, OnInit } from "@angular/core";
-import { imageBaseUrl } from "../images-sizes";
+import { imageBaseUrl } from "../../constants/images-sizes";
 
 @Component({
   selector: "app-slider",

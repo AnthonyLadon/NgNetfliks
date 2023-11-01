@@ -11,6 +11,8 @@ import { HomeComponent } from "./pages/home/home.component";
 import { MovieListComponent } from "./pages/movie-list/movie-list.component";
 import { SliderComponent } from "./components/slider/slider.component";
 import { HttpClientModule } from "@angular/common/http";
+import { BannerComponent } from "./components/banner/banner.component";
+import { ShowItemComponent } from './components/show-item/show-item.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     MovieListComponent,
     SliderComponent,
+    BannerComponent,
+    ShowItemComponent,
   ],
   imports: [
     BrowserModule,
