@@ -8,8 +8,8 @@ import { MoviesService } from "./../../services/movies.service";
 })
 export class HomeComponent {
   // creation d'une variable upcomingMovies$ qui va contenir les données de la requete getUpcomingMovies() du service moviesService
-  upcomingMovies$ = this.moviesService.getUpcomingMovies();
-  topRatedMovies$ = this.moviesService.getTopRatedMovies();
+  upcomingMovies$ = this.moviesService.getMoviesByType("upcoming");
+  topRatedMovies$ = this.moviesService.getMoviesByType("top_rated");
 
   // injection du service moviesService dans le constructeur
   constructor(private moviesService: MoviesService) {}

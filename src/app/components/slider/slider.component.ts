@@ -23,7 +23,7 @@ import { imageBaseUrl } from "../../constants/images-sizes";
 export class SliderComponent implements OnInit {
   constructor(private MoviesService: MoviesService) {}
 
-  movies$ = this.MoviesService.getPopularMovies();
+  movies$ = this.MoviesService.getMoviesByType("popular");
   // suffixe $ pour indiquer que c'est un observable
 
   sliderIndex = 0;
