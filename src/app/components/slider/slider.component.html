@@ -1,7 +1,7 @@
 <div class="slider" *ngIf="movies$ | async as movies">
   <ng-container *ngFor="let movie of movies; let movieIndex = index">
     <div class="slide" *ngIf="movieIndex === sliderIndex" @slideFade>
-      <! ng-container is a logical container that can be used to wrap nodes and add local variables -->
+      <!-- ng-container is a logical container that can be used to wrap nodes and add local variables -->
       <div class="slide-bg">
         <img
           [src]="imageBaseUrl + 'w1280' + movie.backdrop_path"

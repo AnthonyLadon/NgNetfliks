@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { MovieDataTypeObject } from "../types/movie";
+import { MovieDataTypeObject, Movie } from "../types/movie";
 import { map } from "rxjs";
 
 @Injectable()
@@ -20,5 +20,11 @@ export class MoviesService {
     // pipe permet de modifier le flux de données (RxJS)
     // -> ici on ne garde que le tableau results
     // count limite le nombre de films à 20 (par défaut)
+  }
+
+  getMovieById(id: string) {
+    return this.http.get<Movie>(
+      `${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`
+    );
   }
 }
