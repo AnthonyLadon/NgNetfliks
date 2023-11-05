@@ -5,9 +5,9 @@ import {
   style,
   animate,
 } from "@angular/animations";
-import { MoviesService } from "./../../services/movies.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { imageBaseUrl } from "../../constants/images-sizes";
+import { Movie } from "src/app/types/movie";
 
 @Component({
   selector: "app-slider",
@@ -21,16 +21,20 @@ import { imageBaseUrl } from "../../constants/images-sizes";
   ],
 })
 export class SliderComponent implements OnInit {
-  constructor(private MoviesService: MoviesService) {}
+  @Input() slides: Movie[] = [];
+  // Input permettant de savoir si le slider doit se comporter comme un header ou non
+  @Input() isHeader = false;
 
-  movies$ = this.MoviesService.getMoviesByType("popular");
-  // suffixe $ pour indiquer que c'est un observable
+  constructor() {}
 
   sliderIndex = 0;
   imageBaseUrl = imageBaseUrl;
 
   ngOnInit() {
-    this.changeSlide();
+    // Si le slider n'est pas un header, on lance le changement de slide
+    if (!this.isHeader) {
+      this.changeSlide();
+    }
   }
 
   changeSlide() {

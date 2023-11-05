@@ -10,7 +10,7 @@ import { MapToMovies } from "../../types/tvshows";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent {
-  // creation d'une variable upcomingMovies$ qui va contenir les données de la requete getUpcomingMovies() du service moviesService
+  popularMovies$ = this.moviesService.getMoviesByType("popular", 12);
   upcomingMovies$ = this.moviesService.getMoviesByType("upcoming", 12);
   topRatedMovies$ = this.moviesService.getMoviesByType("top_rated", 12);
   popularTvShows$ = this.tvshowService

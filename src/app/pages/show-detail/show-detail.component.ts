@@ -28,6 +28,7 @@ export class ShowDetailComponent implements OnInit {
     // or we can use snapshot to get the current value of the route param
     this.showId = this.router.snapshot.params["id"];
 
+    // récupération du film par son id
     this.show$ = this.moviesService.getMovieById(this.showId);
   }
 }
