@@ -12,6 +12,10 @@ export type Movie = {
   title: string;
   vote_average: number;
   vote_count: number;
+  revenue?: number;
+  runtime?: string;
+  status?: string;
+  genres?: Genre[]; // tableau de genres
 };
 
 export type MovieDataTypeObject = {
@@ -19,4 +23,10 @@ export type MovieDataTypeObject = {
   results: Movie[];
   total_pages: number;
   total_results: number;
+};
+
+// typage des données de l'api (genres)
+export type Genre = {
+  id: number;
+  name: string;
 };

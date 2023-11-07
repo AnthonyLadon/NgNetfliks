@@ -1,0 +1,51 @@
+// importation des variables sass
+@import "../../../styles/colors";
+
+// Pour avoir accès à la classe p-tabview-nav, il faut
+// utiliser ::ng-deep
+::ng-deep {
+  .p-tabview .p-tabview-nav {
+    justify-content: center;
+  }
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    color: $primary-color;
+  }
+  .p-tabview .p-tabview-nav .p-tabview-ink-bar {
+    background-color: $primary-color;
+  }
+}
+
+.overview-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2rem;
+  padding: 0 2rem;
+
+  .show-data {
+    width: 100%;
+
+    .poster {
+      width: 100%;
+      height: 100%;
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: row;
+      column-gap: 0.5rem;
+      line-height: 1.5rem;
+
+      .label {
+        font-weight: bold;
+        width: 120px;
+      }
+
+      .value {
+        color: $primary-color;
+      }
+    }
+  }
+}

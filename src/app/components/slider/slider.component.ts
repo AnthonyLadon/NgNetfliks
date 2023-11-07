@@ -21,6 +21,7 @@ import { Movie } from "src/app/types/movie";
   ],
 })
 export class SliderComponent implements OnInit {
+  // Input permettant de récupérer les slides à afficher
   @Input() slides: Movie[] = [];
   // Input permettant de savoir si le slider doit se comporter comme un header ou non
   @Input() isHeader = false;
