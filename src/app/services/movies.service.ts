@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MovieDataTypeObject, Movie } from "../types/movie";
 import { map } from "rxjs";
+import { VideoDataTypeObject } from "../types/video";
 
 @Injectable()
 // ajouter le service manuellement dans app.modules.ts -> providers
@@ -26,5 +27,13 @@ export class MoviesService {
     return this.http.get<Movie>(
       `${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`
     );
+  }
+
+  getMovieVideos(id: string) {
+    return this.http
+      .get<VideoDataTypeObject>(
+        `${this.apiUrl}/movie/${id}/videos?api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.results));
   }
 }

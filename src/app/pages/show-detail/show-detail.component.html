@@ -43,7 +43,16 @@
         </div>
       </div>
     </p-tabPanel>
-    <p-tabPanel header="Videos"> </p-tabPanel>
+    <!-- Table des videos du film  -->
+    <p-tabPanel header="Videos">
+      <ng-container *ngIf="showVideos$ | async as showVideos">
+        <div class="videos">
+          <div *ngFor="let showVideo of showVideos">
+            {{ showVideo | json }}
+          </div>
+        </div>
+      </ng-container>
+    </p-tabPanel>
     <p-tabPanel header="Photos"> </p-tabPanel>
   </p-tabView>
 </ng-container>
