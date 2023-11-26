@@ -15,6 +15,7 @@ import { BannerComponent } from "./components/banner/banner.component";
 import { ShowItemComponent } from "./components/show-item/show-item.component";
 import { ShowDetailComponent } from "./pages/show-detail/show-detail.component";
 import { TabViewModule } from "primeng/tabview";
+import { VideoEmbedComponent } from './components/show-item/video-embed/video-embed.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TabViewModule } from "primeng/tabview";
     BannerComponent,
     ShowItemComponent,
     ShowDetailComponent,
+    VideoEmbedComponent,
   ],
   imports: [
     BrowserModule,
