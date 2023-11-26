@@ -15,6 +15,7 @@ export class ShowDetailComponent implements OnInit {
   showId = "";
   show$: Observable<Movie> | null = null;
   showVideos$: Observable<Video[]> | null = null;
+  showImages$: Observable<any> | null = null;
   imagesSizes = IMAGES_SIZES;
 
   // ActivatedRoute is a service that gives us access to the current route
@@ -38,5 +39,8 @@ export class ShowDetailComponent implements OnInit {
 
     // récupération des vidéos du film par son id
     this.showVideos$ = this.moviesService.getMovieVideos(this.showId);
+
+    // récupération des images du film par son id
+    this.showImages$ = this.moviesService.getMovieImages(this.showId);
   }
 }

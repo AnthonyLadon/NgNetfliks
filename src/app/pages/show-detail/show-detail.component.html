@@ -53,7 +53,20 @@
         </div>
       </ng-container>
     </p-tabPanel>
-    <p-tabPanel header="Photos"> </p-tabPanel>
+    <!-- Table des images du film  -->
+    <p-tabPanel header="Photos">
+      <ng-container *ngIf="showImages$ | async as showImages">
+        <div class="images">
+          <div *ngFor="let showImage of showImages">
+            <img
+              [src]="imagesSizes.medium + showImage.file_path"
+              alt=""
+              class="show-image"
+            />
+          </div>
+        </div>
+      </ng-container>
+    </p-tabPanel>
   </p-tabView>
 </ng-container>
 
