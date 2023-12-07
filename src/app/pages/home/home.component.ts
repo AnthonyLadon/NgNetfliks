@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { TvshowsService } from "./../../services/tvshows.service";
 import { MoviesService } from "./../../services/movies.service";
 import { map } from "rxjs";
-import { MapToMovies } from "../../types/tvshows";
+import { mapToMovies } from "../../types/tvshows";
 
 @Component({
   selector: "app-home",
@@ -15,7 +15,7 @@ export class HomeComponent {
   topRatedMovies$ = this.moviesService.getMoviesByType("top_rated", 12);
   popularTvShows$ = this.tvshowService
     .getTvShowsByType("popular", 12)
-    .pipe(map(MapToMovies));
+    .pipe(map(mapToMovies));
 
   // injection du service moviesService et TvshowsService dans le constructeur
   constructor(

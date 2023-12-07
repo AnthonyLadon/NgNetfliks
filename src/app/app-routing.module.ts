@@ -7,7 +7,7 @@ import { ShowDetailComponent } from "./pages/show-detail/show-detail.component";
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "movie-list", component: MovieListComponent },
-  { path: "detail/:id", component: ShowDetailComponent },
+  { path: "detail/:id/:type", component: ShowDetailComponent },
 ];
 
 @NgModule({

@@ -3,7 +3,7 @@
   <div class="banner-container" *ngIf="shows">
     <div class="shows" *ngFor="let show of shows">
       <!-- Affiche le composant showItem -->
-      <app-show-item [showItem]="show"></app-show-item>
+      <app-show-item [showItem]="show" [showType]="showType"></app-show-item>
     </div>
   </div>
 </div>

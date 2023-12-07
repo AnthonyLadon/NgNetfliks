@@ -4,6 +4,7 @@ import { MovieDataTypeObject, Movie } from "../types/movie";
 import { map } from "rxjs";
 import { VideoDataTypeObject } from "../types/video";
 import { ImageDataTypeObject } from "../types/image";
+import { CreditsDataTypeObject } from "../types/cast";
 
 @Injectable()
 // ajouter le service manuellement dans app.modules.ts -> providers
@@ -44,5 +45,29 @@ export class MoviesService {
         `${this.apiUrl}/movie/${id}/images?api_key=${this.apiKey}`
       )
       .pipe(map((data) => data.backdrops));
+  }
+
+  getMovieCast(id: string) {
+    return this.http
+      .get<CreditsDataTypeObject>(
+        `${this.apiUrl}/movie/${id}/credits?api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.cast));
+  }
+
+  getSimilarMovies(id: string, count = 12) {
+    return this.http
+      .get<MovieDataTypeObject>(
+        `${this.apiUrl}/movie/${id}/similar?api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.results.slice(0, count)));
+  }
+
+  searchMovies(page: number, searchValue?: string) {
+    return this.http
+      .get<MovieDataTypeObject>(
+        `${this.apiUrl}/search/movie?page=${page}&query=${searchValue}&api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.results));
   }
 }

@@ -10,6 +10,7 @@ import { Movie } from "../../types/movie";
 export class ShowItemComponent {
   // The @Input() decorator is used to make the showItem property available to the parent component.
   @Input() showItem: Movie | null = null;
+  @Input() showType: "tv" | "movie" = "movie";
 
   // récupération de l'url de base des images (import de la constante imageBaseUrl)
   imageBaseUrl = imageBaseUrl;

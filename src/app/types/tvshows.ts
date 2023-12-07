@@ -27,7 +27,7 @@ export type TvShowsDataTypeObject = {
 // On map les données de l'api (tv shows) en données
 // de l'api (movies) en changeant les propriétés differentes
 // (name => title, original_name => original_title)
-export function MapToMovies(tvshows: Tvshow[]): Movie[] {
+export function mapToMovies(tvshows: Tvshow[]): Movie[] {
   return tvshows.map((tvshow: Tvshow) => {
     return {
       ...tvshow,
@@ -35,4 +35,12 @@ export function MapToMovies(tvshows: Tvshow[]): Movie[] {
       original_title: tvshow.original_name,
     };
   });
+}
+
+export function mapToMovie(tvshow: Tvshow): Movie {
+  return {
+    ...tvshow,
+    title: tvshow.name,
+    original_title: tvshow.original_name,
+  };
 }

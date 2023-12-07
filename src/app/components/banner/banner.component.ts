@@ -9,4 +9,5 @@ import { Movie } from "src/app/types/movie";
 export class BannerComponent {
   @Input() shows: Movie[] = [];
   @Input() title: string = "";
+  @Input() showType: "tv" | "movie";
 }
