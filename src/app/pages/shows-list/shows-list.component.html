@@ -1,4 +1,16 @@
 <div class="show-list">
+  <span class="p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <!-- Two-way data binding + event listener (change)-->
+    <input
+      class="searchInput"
+      type="text"
+      placeholder="Search for a show"
+      pInputText
+      [(ngModel)]="searchValue"
+      (change)="searchValueChanged()"
+    />
+  </span>
   <ng-container *ngIf="showsList$ | async as showsList">
     <div class="show-list-grid">
       <div *ngFor="let show of showsList">

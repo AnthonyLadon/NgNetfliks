@@ -10,10 +10,19 @@ import { Movie } from "src/app/types/movie";
 })
 export class ShowsListComponent implements OnInit {
   showsList$: Observable<Movie[]> | null = null;
+  searchValue: string = ""; // data binding (search input)
 
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {
-    this.showsList$ = this.moviesService.searchMovies(1);
+    this.getPagedShows(1, this.searchValue);
+  }
+
+  getPagedShows(page: number, searchString?: string) {
+    this.showsList$ = this.moviesService.searchMovies(page, searchString);
+  }
+
+  searchValueChanged() {
+    this.getPagedShows(1, this.searchValue);
   }
 }

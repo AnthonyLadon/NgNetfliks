@@ -17,6 +17,8 @@ import { TabViewModule } from "primeng/tabview";
 import { VideoEmbedComponent } from "./components/show-item/video-embed/video-embed.component";
 import { ImageModule } from "primeng/image";
 import { CarouselModule } from "primeng/carousel";
+import { InputTextModule } from "primeng/inputtext";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { CarouselModule } from "primeng/carousel";
     TabViewModule,
     ImageModule,
     CarouselModule,
+    InputTextModule,
+    FormsModule,
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent],
