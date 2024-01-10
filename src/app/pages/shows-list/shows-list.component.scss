@@ -1,0 +1,9 @@
+.show-list-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(16.6%, 1fr)
+  ); /* 6 éléments par ligne */
+  gap: 0.5rem;
+  grid-row-gap: 1rem;
+}
