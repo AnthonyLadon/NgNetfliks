@@ -15,7 +15,7 @@ export class ShowsListComponent implements OnInit {
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {
-    this.getPagedShows(1, this.searchValue);
+    this.getPagedShows(1);
   }
 
   getPagedShows(page: number, searchString?: string) {
