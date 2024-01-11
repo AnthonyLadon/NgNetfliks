@@ -13,9 +13,18 @@
   </span>
   <ng-container *ngIf="showsList$ | async as showsList">
     <div class="show-list-grid">
-      <div *ngFor="let show of showsList">
+      <div *ngFor="let show of showsList.results">
         <app-show-item [showItem]="show"></app-show-item>
       </div>
     </div>
+
+    <div class="pagniator">
+      <p-paginator
+        (onPageChange)="pageHasChanged($event)"
+        [rows]="20"
+        [totalRecords]="showsList.total_results"
+      ></p-paginator>
+    </div>
   </ng-container>
+  // attention showsList n'est pas connu en dehors du ng-container
 </div>

@@ -67,10 +67,8 @@ export class MoviesService {
     const uri = searchValue ? "search/movie" : "movie/popular";
     // si searchValue est défini, on utilise l'URI de recherche
     // sinon par defaut on va chercher films populaires
-    return this.http
-      .get<MovieDataTypeObject>(
-        `${this.apiUrl}/${uri}?page=${page}&query=${searchValue}&api_key=${this.apiKey}`
-      )
-      .pipe(map((data) => data.results));
+    return this.http.get<MovieDataTypeObject>(
+      `${this.apiUrl}/${uri}?page=${page}&query=${searchValue}&api_key=${this.apiKey}`
+    );
   }
 }
