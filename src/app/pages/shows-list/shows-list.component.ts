@@ -12,6 +12,8 @@ import { Movie, MovieDataTypeObject } from "src/app/types/movie";
 export class ShowsListComponent implements OnInit {
   showsList$: Observable<MovieDataTypeObject> | null = null;
   searchValue: string = ""; // data binding (search input)
+  first: number = 0;
+  rows: number = 20;
 
   constructor(private moviesService: MoviesService) {}
 
@@ -33,5 +35,8 @@ export class ShowsListComponent implements OnInit {
     // si non, on met 1 par défaut
     const pageNumber = event.page ? event.page + 1 : 1;
     this.getPagedShows(pageNumber, this.searchValue);
+    this.first = (pageNumber - 1) * this.rows;
+    // on met à jour la valeur de first pour que le paginator
+    // (current page) soit bien positionné
   }
 }

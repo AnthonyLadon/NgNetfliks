@@ -21,7 +21,8 @@
     <div class="pagniator">
       <p-paginator
         (onPageChange)="pageHasChanged($event)"
-        [rows]="20"
+        [rows]="rows"
+        [first]="first"
         [totalRecords]="showsList.total_results"
       ></p-paginator>
     </div>
