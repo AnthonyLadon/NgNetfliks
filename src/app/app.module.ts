@@ -20,6 +20,7 @@ import { CarouselModule } from "primeng/carousel";
 import { InputTextModule } from "primeng/inputtext";
 import { FormsModule } from "@angular/forms";
 import { PaginatorModule } from "primeng/paginator";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { PaginatorModule } from "primeng/paginator";
     InputTextModule,
     FormsModule,
     PaginatorModule,
+    MatProgressSpinnerModule,
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent],

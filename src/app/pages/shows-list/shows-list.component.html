@@ -11,6 +11,8 @@
       (change)="searchValueChanged()"
     />
   </span>
+  <mat-progress-spinner *ngIf="isLoading == true" mode="indeterminate">
+  </mat-progress-spinner>
   <ng-container *ngIf="showsList$ | async as showsList">
     <div class="show-list-grid">
       <div *ngFor="let show of showsList.results">

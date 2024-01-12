@@ -10,6 +10,7 @@ import { Movie, MovieDataTypeObject } from "src/app/types/movie";
   styleUrls: ["./shows-list.component.scss"],
 })
 export class ShowsListComponent implements OnInit {
+  isLoading = false;
   showsList$: Observable<MovieDataTypeObject> | null = null;
   searchValue: string = ""; // data binding (search input)
   first: number = 0;
@@ -22,7 +23,9 @@ export class ShowsListComponent implements OnInit {
   }
 
   getPagedShows(page: number, searchString?: string) {
+    this.isLoading = true;
     this.showsList$ = this.moviesService.searchMovies(page, searchString);
+    this.isLoading = false;
   }
 
   searchValueChanged() {
@@ -30,13 +33,12 @@ export class ShowsListComponent implements OnInit {
   }
 
   pageHasChanged(event: PaginatorState) {
-    // on s'assure que event.page est bien défini
-    // si oui, on ajoute 1 à event.page (car l'API commence à 0)
-    // si non, on met 1 par défaut
-    const pageNumber = event.page ? event.page + 1 : 1;
+    // on s'assure que event.page est bien défini (ajout +1 car API commence à 0)
+    let pageNumber = event.page ? event.page + 1 : 1;
+    // limiter pageNumber à 500 max (limite API)
+    pageNumber > 500 ? (pageNumber = 500) : pageNumber;
     this.getPagedShows(pageNumber, this.searchValue);
     this.first = (pageNumber - 1) * this.rows;
-    // on met à jour la valeur de first pour que le paginator
-    // (current page) soit bien positionné
+    // mise à jour de first pour que le paginator (current page) soit bien positionné
   }
 }
