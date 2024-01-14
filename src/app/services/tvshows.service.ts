@@ -7,9 +7,9 @@ import { VideoDataTypeObject } from "../types/video";
 import { CreditsDataTypeObject } from "../types/cast";
 import { Tvshow } from "../types/tvshows";
 
-@Injectable({
-  providedIn: "root",
-})
+@Injectable()
+// ajouter le service manuellement dans app.modules.ts -> providers
+// au lieu de le faire automatiquement avec providedIn: "root" {providedIn: "root"}
 export class TvshowsService {
   private apiUrl = "https://api.themoviedb.org/3";
   private apiKey = "57b699211123b3ce9e79bf593bf60982";

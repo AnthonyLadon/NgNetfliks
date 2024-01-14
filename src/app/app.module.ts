@@ -21,7 +21,8 @@ import { InputTextModule } from "primeng/inputtext";
 import { FormsModule } from "@angular/forms";
 import { PaginatorModule } from "primeng/paginator";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import { GenresComponent } from './pages/genres/genres.component';
+import { GenresComponent } from "./pages/genres/genres.component";
+import { TvshowsService } from "./services/tvshows.service";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { GenresComponent } from './pages/genres/genres.component';
     PaginatorModule,
     MatProgressSpinnerModule,
   ],
-  providers: [MoviesService],
+  providers: [MoviesService, TvshowsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

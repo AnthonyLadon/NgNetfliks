@@ -27,7 +27,7 @@ export type MovieDataTypeObject = {
 
 // typage des données de l'api (genres)
 export type Genre = {
-  id: number;
+  id: string;
   name: string;
 };
 

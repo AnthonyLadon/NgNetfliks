@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs";
 import { MoviesService } from "src/app/services/movies.service";
-import { Genre } from "src/app/types/movie";
+import { Genre, Movie } from "src/app/types/movie";
 import { OnInit } from "@angular/core";
 
 @Component({
@@ -11,6 +11,7 @@ import { OnInit } from "@angular/core";
 })
 export class GenresComponent implements OnInit {
   genres$: Observable<Genre[]> | null = null;
+  shows$: Observable<Movie[]> | null = null;
 
   constructor(private movieService: MoviesService) {}
 
@@ -18,5 +19,7 @@ export class GenresComponent implements OnInit {
     this.genres$ = this.movieService.getMoviesGenres();
   }
 
-  findByGenre(genreId: number) {}
+  findByGenre(genreId: string) {
+    this.shows$ = this.movieService.getMoviesByGenre(genreId);
+  }
 }
