@@ -99,5 +99,9 @@
 
 <!-- Similar movies -->
 <ng-container *ngIf="similarMovies$ | async as similarMovies">
-  <app-banner [title]="'Watch Similar'" [shows]="similarMovies"></app-banner>
+  <app-banner
+    [title]="'Watch Similar'"
+    [shows]="similarMovies"
+    [showType]="showType"
+  ></app-banner>
 </ng-container>

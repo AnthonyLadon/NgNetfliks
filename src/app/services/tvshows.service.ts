@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs";
-import { TvShowsDataTypeObject } from "../types/tvshows";
+import { TvShowsDataTypeObject, mapToMovies } from "../types/tvshows";
 import { ImageDataTypeObject } from "../types/image";
 import { VideoDataTypeObject } from "../types/video";
 import { CreditsDataTypeObject } from "../types/cast";
@@ -60,5 +60,14 @@ export class TvshowsService {
         `${this.apiUrl}/tv/${id}/similar?api_key=${this.apiKey}`
       )
       .pipe(map((data) => data.results.slice(0, count)));
+  }
+
+  searchTvShows(page: number, searchValue?: string) {
+    const uri = searchValue ? "search/tv" : "tv/popular";
+    // si searchValue est défini, on utilise l'URI de recherche
+    // sinon par defaut on va chercher films populaires
+    return this.http.get<TvShowsDataTypeObject>(
+      `${this.apiUrl}/${uri}?page=${page}&query=${searchValue}&api_key=${this.apiKey}`
+    );
   }
 }

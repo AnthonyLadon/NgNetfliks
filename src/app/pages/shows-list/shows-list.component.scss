@@ -10,9 +10,16 @@
 }
 .p-input-icon-left {
   .searchInput {
-    margin: 2rem;
+    margin: 1rem;
+    caret-color: rgb(172, 30, 30);
   }
   i {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
+}
+mat-progress-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
 }

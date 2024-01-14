@@ -1,4 +1,4 @@
-import { Movie } from "./movie";
+import { Movie, MovieDataTypeObject } from "./movie";
 
 //typage des données de l'api (tv shows)
 export type Tvshow = {
@@ -42,5 +42,17 @@ export function mapToMovie(tvshow: Tvshow): Movie {
     ...tvshow,
     title: tvshow.name,
     original_title: tvshow.original_name,
+  };
+}
+
+// map les données de TvShowsDataTypeObject en MoviesDataTypeObject
+export function mapToMoviesDto(
+  tvshowsDto: TvShowsDataTypeObject
+): MovieDataTypeObject {
+  return {
+    page: tvshowsDto.page,
+    results: tvshowsDto.results.map(mapToMovie),
+    total_pages: tvshowsDto.total_pages,
+    total_results: tvshowsDto.total_results,
   };
 }
