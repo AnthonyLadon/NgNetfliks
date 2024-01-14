@@ -1,0 +1,20 @@
+@import "../../../styles/colors";
+
+.genres-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 1rem;
+  a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: 0 0.5rem 1rem 0;
+    background-color: $primary-color;
+    border-radius: 5px;
+    color: white;
+    &:hover {
+      background-color: $primary-color-hover;
+    }
+  }
+}

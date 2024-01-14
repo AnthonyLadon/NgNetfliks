@@ -1,3 +1,5 @@
+@import "../../../styles/colors";
+
 .show-list-grid {
   padding: 1rem;
   display: grid;
@@ -11,7 +13,7 @@
 .p-input-icon-left {
   .searchInput {
     margin: 1rem;
-    caret-color: rgb(172, 30, 30);
+    caret-color: $primary-color;
   }
   i {
     margin-left: 1rem;

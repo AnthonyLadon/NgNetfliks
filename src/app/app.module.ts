@@ -21,6 +21,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { FormsModule } from "@angular/forms";
 import { PaginatorModule } from "primeng/paginator";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { GenresComponent } from './pages/genres/genres.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     ShowDetailComponent,
     VideoEmbedComponent,
     ShowsListComponent,
+    GenresComponent,
   ],
   imports: [
     BrowserModule,

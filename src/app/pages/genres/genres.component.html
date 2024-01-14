@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="genres-links">
+    <ng-container *ngIf="genres$ | async as genres">
+      <a
+        *ngFor="let genre of genres"
+        (keydown)="findByGenre(genre.id)"
+        (click)="findByGenre(genre.id)"
+        aria-hidden="true"
+        role="button"
+        >{{ genre.name }}</a
+      >
+    </ng-container>
+  </div>
+</div>

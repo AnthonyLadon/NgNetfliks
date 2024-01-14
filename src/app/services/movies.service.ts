@@ -1,6 +1,10 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { MovieDataTypeObject, Movie } from "../types/movie";
+import {
+  MovieDataTypeObject,
+  Movie,
+  GenreDataTypeObject,
+} from "../types/movie";
 import { map } from "rxjs";
 import { VideoDataTypeObject } from "../types/video";
 import { ImageDataTypeObject } from "../types/image";
@@ -70,5 +74,13 @@ export class MoviesService {
     return this.http.get<MovieDataTypeObject>(
       `${this.apiUrl}/${uri}?page=${page}&query=${searchValue}&api_key=${this.apiKey}`
     );
+  }
+
+  getMoviesGenres() {
+    return this.http
+      .get<GenreDataTypeObject>(
+        `${this.apiUrl}/genre/movie/list?api_key=${this.apiKey}`
+      )
+      .pipe(map((data) => data.genres));
   }
 }
