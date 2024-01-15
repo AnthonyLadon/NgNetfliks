@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: "list/:type", component: ShowsListComponent },
   { path: "detail/:id/:type", component: ShowDetailComponent },
   { path: "genres", component: GenresComponent },
+  { path: "genres/:genreId", component: GenresComponent },
 ];
 
 @NgModule({

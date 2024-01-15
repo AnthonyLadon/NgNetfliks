@@ -28,9 +28,6 @@ export class ShowsListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.showsType = this.activeRoute.snapshot.params["type"]; // recuperer le parametre de l'url
-    this.getPagedShows(this.showsType, 1);
-
     // observe the route params for changes and update the showsType property
     this.activeRoute.params.subscribe((params) => {
       this.showsType = params["type"];
