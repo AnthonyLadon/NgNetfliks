@@ -31,14 +31,15 @@
   }
   &-title {
     position: relative;
+    overflow: scroll;
     text-align: center;
-    padding: 0.5rem;
-    bottom: 3rem;
+    padding: 1rem 0.5rem;
+    bottom: 2.8rem;
     display: flex;
     align-items: center;
     font-weight: bold;
     height: 2.5rem;
-    background-color: black;
+    background-color: rgb(28, 27, 27);
     border-radius: 0 0 5px 5px;
   }
 }

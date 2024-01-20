@@ -1,8 +1,8 @@
 // importation des variables sass
 @import "../../../styles/colors";
 
-// Pour avoir accès à la classe p-tabview-nav, il faut
-// utiliser ::ng-deep
+//! Pour avoir accès à la classe p-tabview-nav, il faut
+//! utiliser ::ng-deep
 ::ng-deep {
   .p-tabview .p-tabview-nav {
     justify-content: center;

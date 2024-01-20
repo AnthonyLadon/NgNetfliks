@@ -71,7 +71,7 @@ export class ShowsListComponent implements OnInit {
     let pageNumber = event.page ? event.page + 1 : 1;
     // limiter pageNumber à 500 max (limite API)
     pageNumber > 500 ? (pageNumber = 500) : pageNumber;
-    this.getPagedShows(this.showsType, 1, this.searchValue);
+    this.getPagedShows(this.showsType, pageNumber, this.searchValue);
     this.first = (pageNumber - 1) * this.rows;
     // mise à jour de first pour que le paginator (current page) soit bien positionné
   }

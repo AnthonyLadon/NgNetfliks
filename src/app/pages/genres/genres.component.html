@@ -15,5 +15,14 @@
   <div class="show-list-grid">
     <div *ngFor="let show of showsList">
       <app-show-item [showItem]="show" />
-    </div></div
-></ng-container>
+    </div>
+  </div>
+  <div class="pagniator">
+    <p-paginator
+      (onPageChange)="pageHasChanged($event)"
+      [rows]="rows"
+      [first]="first"
+      [totalRecords]="total_records"
+    ></p-paginator>
+  </div>
+</ng-container>
